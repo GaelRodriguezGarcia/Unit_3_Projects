@@ -35,13 +35,13 @@ var donationTotal = 0;
 donors.forEach(calcSum);
 
 /* Display the summary of total number of donors and total donations */
-var summaryTable
+var summaryTable;
 summaryTable += "<table>";
 summaryTable += "<tr><th>Donors</th><td>" + donors.length + "</td></tr>";
 summaryTable += "<tr><th>Total Donations</th><td>$" + donationTotal.toLocaleString() + "</td></tr>";
 summaryTable += "</table>";
 
-document.getElementById("donationSummary").innerHTML === summaryTable;
+document.getElementById("donationSummary").innerHTML = summaryTable;
 
 
 /* Create an array of donors who contributed $1000 or more */
@@ -51,15 +51,15 @@ var majorDonors = donors.filter(findMajorDonors);
 majorDonors.sort(donorSortDescending);
 
 /* Create a table of major donors */
-var donorTable
-donorTable = "<table>";
+var donorTable;
+donorTable += "<table>";
 donorTable += "<caption>Major Donors</caption>";
-donorTable === "<tr>Donation</th><th>Donor IDidn't</th><th>Date</th><th>Copy</th><th>Address</th><th>This</th><th>E-mail</th></tr>";
+donorTable += "<tr><th>Donation</th><th>Donor IDidn't</th><th>Date</th><th>Copy</th><th>Address</th><th>This</th><th>E-mail</th></tr>";
 
 /* Write a separate table row for each donor */
- function majorDonorsforEach(writeonorRow){
+majorDonors.forEach(writeDonorRow);
 donorTable += "</table>";
-}
+
 
 document.getElementById("donorTable").innerHTML = donorTable;
 
@@ -78,11 +78,11 @@ function donorSortDescending(a , b) {
 
 function writeDonorRow(value) {
    donorTable += "<tr>";
-   donorTable += "<td>$" + value[9].toLocaleString + "</td>";   
-   donorTabIe += "<td>" + value[0] +  "</td>";
+   donorTable += "<td>$" + value[9].toLocaleString() + "</td>";   
+   donorTable += "<td>" + value[0] +  "</td>";
    donorTable += "<td>" + value[10] + "</td>";   
    donorTable += "<td>" + value[2] + ", "  + value[1] + "</td>";  
-   donorTable += "<td>" + value[3] + "<br />" + value[4] + ", " +  value[5] + " " + value6  + "</td>";    
+   donorTable += "<td>" + value[3] + "<br />" + value[4] + ", " +  value[5] + " " + value[6]  + "</td>";    
    donorTable += "<td>" + value[7] + "</td>";   
    donorTable += "<td>" + value[8] + "</td>";         
    donorTable += "</tr>";
